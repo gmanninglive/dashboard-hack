@@ -8,7 +8,7 @@ const AppWebsiteVisits = dynamic(import("../components/chart"), {
 const Home = () => {
   const [enquiryIsOpen, setEnquiryIsOpen] = useState(false);
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 pb-32">
       <h1 className="sr-only">Page title</h1>
       {/* Main 3 column grid */}
 
@@ -19,7 +19,7 @@ const Home = () => {
             <h2 className="sr-only" id="section-1-title">
               Section title
             </h2>
-            <div className="overflow-hidden rounded-lg bg-white shadow p-6">
+            <div className="overflow-hidden rounded-lg bg-white shadow p-2 sm:p-6">
               <Suspense fallback={<Loading />}>
                 <AppWebsiteVisits
                   title="Monthly spend"
@@ -98,7 +98,7 @@ const Home = () => {
       {enquiryIsOpen && (
         <QuoteModal open={enquiryIsOpen} setOpen={setEnquiryIsOpen} />
       )}
-      <div className="absolute bottom-12 right-12 grid gap-6">
+      <div className="fixed bottom-2 right-2 sm:bottom-12 sm:right-12 grid gap-6">
         <NewQuote onClick={() => setEnquiryIsOpen(true)} />
         <Chat />
       </div>
